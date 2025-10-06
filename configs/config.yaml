@@ -1,0 +1,26 @@
+# Configuration parameters for RL, environment, and durations
+
+phase_durations:
+  VERT_GREEN: 5
+  VERT_YELLOW: 2
+  VERT_RED: 5
+  HORZ_GREEN: 5
+  HORZ_YELLOW: 2
+  HORZ_RED: 5
+
+rl:
+  learning_rate: 0.001
+  gamma: 0.99
+
+exploration:
+  epsilon_start: 1.0
+  epsilon_min: 0.05
+  epsilon_decay: 0.95
+
+environment:
+  width: 800
+  height: 600
+  road_width: 120
+  vehicle_spawn_interval: 1.0
+  vehicle_speed: 1.5
+  max_timesteps: 200
