@@ -1,46 +1,72 @@
-# 4-Way Intersection Traffic Control with Reinforcement Learning
-A Python project that uses reinforcement learning to optimize traffic light phases at a four-way intersection, aiming to reduce congestion and waiting times through adaptive signal control.
+# 🚦 4-Way Intersection Traffic Control with Reinforcement Learning
+A Python-based project that applies Reinforcement Learning (RL) to manage a four-way traffic intersection, optimizing traffic light phases to minimize congestion and vehicle waiting time through adaptive signal control.
 
 
-# Overview
-This project simulates a four-way traffic intersection and trains a reinforcement learning (RL) agent to control the traffic lights. The agent learns to minimize vehicle waiting times and improve the flow of traffic by dynamically adjusting signal phases based on real-time vehicle queue data.
+# 🧭 Overview
+This project simulates a realistic four-way intersection and trains an RL agent to control the traffic lights dynamically.
+
+The goal is to improve traffic flow by learning when to switch lights based on real-time vehicle queue data.
+
+The agent is trained using a policy-gradient (REINFORCE) approach and continuously improves by interacting with the simulation environment.
 
 
-# Features
-1. Custom Traffic Environment: Simulates realistic vehicle movements and traffic light phases.
-2. Reinforcement Learning Agent: Uses a policy-gradient (REINFORCE) algorithm with a neural network to learn optimal phase transitions.
-3. Training and Evaluation: Trains the RL agent and evaluates its performance in a live simulation.
-4. Visualization: Real-time intersection visualization and training metrics plotting.
-5. Configurable: Easily adjust environment and RL parameters via YAML config files.
+# ✨ Features
+1. 🏙️ Custom Traffic Environment — Simulates realistic vehicle arrivals, departures, and light changes.
+2. 🧠 Reinforcement Learning Agent — Uses a neural network with the REINFORCE algorithm to learn optimal signal phase transitions.
+3. 📈 Training & Evaluation — Trains the agent and evaluates its policy using live simulations and metrics tracking.
+4. 🎮 Visualization — Includes real-time traffic visualization using Pygame.
+5. ⚙️ Configurable Setup — All environment and RL parameters can be adjusted easily through YAML configuration files.
 
 
-# Install dependencies
-pip install -r requirements.txt
+# ⚙️ Installation
+Make sure you have Python 3.7+ installed.
+
+Install all required dependencies using: pip install -r requirements.txt
 
 
-# Run the main script
-python main.py
+# 🚀 Running the Project
+To train the agent and start the simulation, run: python main.py
 
-The script will first train the RL agent and then launch the simulation using the trained model.
-
-
-# How It Works
-## Training:
-The RL agent observes the current traffic state (vehicle queues, light phase, timers) and selects actions to change the traffic light phase. It receives rewards based on traffic efficiency and timing accuracy, updating its policy to maximize long-term performance.
-
-## Simulation:
-After training, the agent's learned policy is used to control the intersection in real time, adapting to changing traffic conditions for optimal flow.
+The script first trains the RL agent and then launches a live simulation using the trained model.
 
 
-# Visualization
-## Real-Time Simulation:
-The intersection and vehicles are rendered using Pygame.
+# 🧩 How It Works
+## 🏋️ Training Phase
+1. The RL agent observes the current traffic state — including queue lengths, signal phase, and time.
+2. Based on this state, it decides whether to switch or hold the current signal phase.
+3. Rewards are assigned depending on traffic efficiency, such as minimizing waiting times and avoiding long queues.
+4. The agent updates its policy network to maximize long-term performance.
 
-## Training Metrics:
-Training reward and exploration rate curves are plotted and saved as training_metrics.png.
+## 🚗 Simulation Phase
+After training, the learned policy is used to control the intersection in real time.
+The system continuously adapts to varying traffic conditions, switching lights intelligently to maintain smooth traffic flow.
 
 
-# Requirements
+# 📊 Visualization
+## 🕹️ Real-Time Simulation
+The traffic intersection and moving vehicles are rendered using Pygame, allowing live observation of how the agent manages signals.
+
+## 📈 Training Metrics
+During training, the following graphs are generated and saved as training_metrics.png:
+1. Average episode rewards
+2. Exploration rate (if applicable)
+3. Traffic performance over time
+
+
+# 🧾 Requirements
 1. Python 3.7+
-2. See requirements.txt for all dependencies:
-    numpy, torch, matplotlib, pygame, pyyaml, random, os, time etc.
+2. Dependencies (see requirements.txt):
+numpy
+torch
+matplotlib
+pygame
+pyyaml
+random
+os
+time
+
+
+# 🧠 Project Summary
+This project demonstrates how reinforcement learning can be applied to real-world control problems such as traffic management.
+
+By learning from simulated traffic behavior, the system adapts to reduce congestion and improve throughput — paving the way for smarter cities.
